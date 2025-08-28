@@ -42,25 +42,32 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.room.runtime)
+
+    ksp(libs.androidx.room.compiler)
 
     val composeBom = platform("androidx.compose:compose-bom:2025.08.00")
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
     // Material Design 3
-    implementation("androidx.compose.material3:material3")
+    implementation(libs.androidx.material3)
 
     // Android Studio Preview support
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    implementation(libs.androidx.ui.tooling.preview)
+    debugImplementation(libs.androidx.ui.tooling)
 
     // UI Tests
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.test.manifest)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.56.2")
-    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
+    // SQLCipher
+    implementation(libs.android.database.sqlcipher)
+    implementation(libs.androidx.sqlite.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
