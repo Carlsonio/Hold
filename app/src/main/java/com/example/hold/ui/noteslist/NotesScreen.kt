@@ -30,6 +30,7 @@ fun NotesScreen(
     val state by viewModel.state.collectAsState()
 
     Scaffold(
+        // TODO: Изменить заголовок topBar'а и вынести его в константу
         topBar = { TopAppBar(title = { Text("Зашифрованные заметки") }) },
         floatingActionButton = {
             FloatingActionButton(onClick = onAddNoteClick) {

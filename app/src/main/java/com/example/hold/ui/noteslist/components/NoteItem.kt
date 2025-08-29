@@ -11,7 +11,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.hold.data.Note
 
@@ -23,9 +22,11 @@ fun NoteItem(note: Note, onClick: () -> Unit) {
             .padding(8.dp)
             .clickable(onClick = onClick),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = Color(note.color)
-        )
+        // TODO: изменить передачу цвета так, чтобы у темной темы был другой цвет
+//        Глупая версия: единый цвет для всех. Возможно стоит использовать Enum или цвета темы
+//        colors = CardDefaults.cardColors(
+//            containerColor = Color(note.color)
+//        )
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             if (note.title.isNotBlank()) {
