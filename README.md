@@ -47,7 +47,7 @@ Hold/
 
 1.  **Clone the repository**:
     ```bash
-    git clone <your-repository-url>
+    git clone <https://github.com/Carlsonio/Hold.git>
     ```
 2.  **Open in Android Studio**:
     *   Open the latest stable version of Android Studio.
@@ -62,7 +62,3 @@ Hold/
 
 *   The application uses SQLCipher for on-device database encryption. The pre-built AAR for SQLCipher typically handles NDK dependencies.
 *   Room database schemas are exported to the `app/schemas/` directory, which is useful for database migrations.
-
----
-
-This README provides a good overview for anyone looking at your project.
